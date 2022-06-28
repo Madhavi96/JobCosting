@@ -1,0 +1,173 @@
+<link rel="stylesheet" type="text/css" href="./skeleton.css" />
+
+<div class="column">
+
+
+	<div class="column_header">
+		<h5>Welcome to NWSDB - CENTRAL WORKSHOP Job Costing</h5>
+
+
+
+		<div class="container_center_top">
+			<div class="single-row"></div>
+				<label style="width:20px;padding-right: 60px;font-size: 20;">Section</label>
+				<select id="section" onchange="changeSection()">
+				  <option value="Electrical">ELECTRICAL</option>
+				  <option value="E/GM">E/GM</option>
+				  <option value="Electronic">ELECTRONIC</option>
+				  <option value="Vehicle">VEHICLE</option>
+				  <option value="V/S">V/S</option>
+				  <option value="Fabric">FABRICATION</option>
+				  <option value="Pump">PUMP</option>
+				  <option value="Machine">MACHINE</option>		 
+				  <option value="Meter">METER</option>
+				</select>
+			</div>
+		</div>
+
+
+
+	<div class="top-row">
+		<div align="center" class="first-top" style="background-color: #229361; opacity: 0.7; ">
+			<img src="new.png">
+			
+		</div>
+
+
+		<div align="center" class="mid-top" style="background-color: #A373D7;opacity: 0.7; ">
+			<img src="employee.png">
+		</div>
+
+
+		<div align="center" class="last-top" style="background-color: #ED9034; opacity: 0.7;">
+			<img src="search.png">
+			
+		</div>
+		
+
+
+	</div>
+
+	
+
+	<div class="split1 left">
+		
+
+		<div class="single-row">
+			<label >Job No</label>
+			<input type="text" id="job_id_year" style="width: 20%">
+			<span style="width: 5%;text-align: center;">/</span> 
+
+		
+			<label id="job_id_type" style="width:40px;" >E</label>
+
+			<span style="width: 5%;text-align: center;">/</span> 
+
+			<input type="text" id="job_id_num" style="width: 20%" >
+			
+		</div>
+		<div class="single-row">
+			<label></label>
+			<span class="right_prop" id="error_jobid" style="padding-bottom: 10px;"></span> 
+
+		</div>
+
+
+		<div class="single-row">
+			<label>Sub Job No</label>
+			<input type="text" id="part_id" style="width: 70%;padding-right: 10px;" placeholder="*">
+
+			
+		</div>
+		<div class="single-row">
+			<label></label>
+			<span class="right_prop" id="error_partid" style="padding-bottom: 10px;"></span> 
+
+		</div>
+
+		<div class="single-row">
+			<label>Date</label>
+			<input type="date" id="date_receive">
+		</div>
+		
+
+		<div class="single-row">
+			<label>Division</label>
+			<input type="text" id="division" style="width: 70%;padding-right: 10px;">
+
+			
+		</div>
+		<div class="single-row">	
+			<label>Description</label>
+			<textarea id="description"></textarea> 
+		</div>
+		<div class="single-row">	
+			<label>Remarks</label>
+			<textarea class="small" id="remarks"></textarea> 
+		</div>
+		<div class="container_center">
+			<button id="create_job" >Create Job</button>
+		</div>
+	</div> 
+
+	<div class="split2 right" id="search_area">
+		<div class="single-row" >
+
+			<span style="width: 20px;text-align: center;"></span> 
+
+
+			<button type="submit" id="add_employee">EMPLOYEE DATA</button>
+
+
+			<span style="width: 20px;text-align: center;"></span> 
+
+			<select id="view_type_options">
+			  <option value="All">All</option>
+			  <option value="Completed">Completed</option>
+			  <option value="Pending">Pending</option>
+			</select>
+			<button type="submit" id="search_job_type">View / Refresh Jobs</button>
+
+			<span style="width: 20%;text-align: center;"></span> 
+
+
+
+				<input type="text" id="search_job_id_year" style="width: 20%">
+				<span style="width: 5px;text-align: center;">/</span> 
+
+				<label id="search_job_id_type" style="width: 40px;display: inline;">E</label>
+
+
+				<span style="width: 5px;text-align: center;">/</span> 
+
+				<input type="text" id="search_job_id_num" style="width: 20%" >
+
+
+				<button type="submit" id="search_job">Search</button>
+				
+			
+		
+	
+
+		</div>
+		<div class="single-row">
+			<span style="width: 40%;text-align: center;"></span> 
+			<label></label>
+			<span class="right_prop" id="error_search_id" style="padding-bottom: 10px;"></span> 
+
+		</div>
+			
+
+		
+
+		<div id="myDynamicTable" style="padding-left:10; height: 420px;overflow-y: auto"></div>
+
+		<div id="preview_area" align= "center" ></div>
+
+	
+
+	</div> 
+
+
+</div>
+<script src="./app.js"></script>

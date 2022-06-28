@@ -1,0 +1,348 @@
+<link rel="stylesheet" type="text/css" href="./styles.css" />
+<div class="column">
+
+	<div class="column_header">
+		<h4><u>NWSDB</u></h4>
+		
+		<h4><u>CENTRAL WORKSHOP - JOB CARD</u></h4>
+		<u>
+			<div class="container-center" >
+				<h4 id="section"></h4> 
+			</div>
+		</u>
+		
+	</div> 
+
+
+
+	<div class="row"> 
+
+	    
+	  	<div class="col-left">
+	  		<div class="single-row">
+	    		<label >Name of Division</label>
+	    		<label id="division"><label>
+
+	    	</div>
+	    	
+	     	<div class="single-row">
+	    		<label >Cost Centre Code</label>
+	    		<input class="left-text" type="text" id="cost_centre_code"></input>
+	    	</div>
+	      	
+	     	<div class="single-row">
+	    		<label >Vehicle/ Equipment</label>
+	    		<input type="text" id="vehicle_or_equipment"></input>
+	    	</div>
+
+
+		</div>
+
+
+
+
+
+		<div class="col-right">
+			<div class="single-row">
+	    		<label >Date</label>
+	    		
+	    		<input type="text" id="today_date" style="text-align: right; font-weight: 600;font-weight:17;"></input>
+
+	    	</div>
+	    	
+	     	<div class="single-row">
+	    		<label >Job No</label>
+	    		<label id="job_no"><label>
+	    	</div>
+	      	
+	     	<div class="single-row">
+	    		<label >Sub Job No</label>
+	    		<label id="sub_job_no"></label>
+	    	</div>
+
+
+			
+
+		</div>	
+
+	</div>
+
+
+	<div class="row"> 
+
+	    
+	  	<div style="width:100%">
+	  		<label >Description of Job</label>
+	  		
+
+		</div>
+	</div>
+	<div class="row"> 
+
+
+
+
+		<div style="width:100%">
+			<table id="tbl_jobs"  style="width:100%%">
+				<tr>
+					<th style="width:12%">Date Received</th>
+					<th style="width:12%">Date Completed</th>
+					<th style="width:5%">Sub Job No</th>
+					<th style="width:12%">Division</th>
+					<th style="width:45%">Description</th>
+					<th style="width:14%">Remarks</th>
+				</tr>
+				
+
+			</table>
+
+		</div>	
+
+		
+
+	</div>
+
+
+
+
+
+
+	<div align="right">
+		<input type="text"><br>
+		<h7>Authorized By</h7>
+		
+	</div>
+
+	
+
+
+	<hr>
+	<div class="row"> 
+		<div style="flex:10%;">
+			<h7>Remarks</h7>	
+		</div>
+		<div style="flex:90%;"><textarea class="large"></textarea></div>
+	
+	</div>
+
+	<hr>
+
+	<div id="all_summary" class="single-row">
+		
+	<h6><b>SUMMARY OF ACTUAL ESTIMATE</b></h6>
+	<span style="padding-left: 30px;"></span>
+	<button onclick ="add_oh()" class="confirm" id="btn_oh_confirm">Add 10% Overhead</button>
+
+	<span style="padding-left: 30px;"></span>
+	<button onclick ="confirm()" class="confirm" id="btn_confirm">Confirm</button>
+
+	</div>
+
+	<div class="row"> 
+
+    
+	  	<div class="col-left">
+			<table id="tbl_summary" >
+				<tr>
+					<td style="width: 50%" class="left-text bottom_border_white">Material Cost</th>
+					<td style="width: 5%" class="small_table_prop bottom_border_white">Rs.</th>
+					<td class="right-text bottom_border_black"><label class="right_lbl" id="summary_material_cost"></label></th>
+					
+				</tr>
+				
+				<tr>
+					<td style="width: 50%" class="left-text bottom_border_white">Labour Cost</th>
+					<td style="width: 5%" class="small_table_prop bottom_border_white">Rs.</th>
+					<td style="width: 45%"class="right-text bottom_border_black"><label class="right_lbl" id="summary_labour_cost"></label></th>
+					
+				</tr>
+				<tr>
+					<td  style="width: 50%" class="left-text bottom_border_white">Machine Cost</th>
+					<td  style="width: 5%" class="small_table_prop bottom_border_white">Rs.</th>
+					<td style="width: 45%" class="right-text bottom_border_black" id="machine_cost_td"><input type="text" style="text-align: right;font-weight: 600" id="summary_machine_cost" ></input></td>
+					
+				</tr>
+
+				<tr>
+					<td style="width: 50%"class="left-text bottom_border_white">Other Cost</th>
+					<td style="width: 5%"class="small_table_prop bottom_border_white">Rs.</th>
+					<td style="width: 45%"class="right-text bottom_border_black"><label class="right_lbl" id="summary_other_cost"></label></th>
+					
+				</tr>
+
+				<tr>
+					<td style="width: 50%" class="left-text bottom_border_white">Total Direct Cost</th>
+					<td style="width: 5%" class="small_table_prop bottom_border_white">Rs.</th>
+					<td style="width: 45%"class="right-text bottom_border_black"><label class="right_lbl" id="direct_cost"></label></th>
+					
+				</tr>
+				<tr>
+					<td style="width: 50%" class="left-text bottom_border_white">Overhead Cost</th>
+					<td style="width: 5%" class="small_table_prop bottom_border_white">Rs.</th>
+					<td style="width: 45%" class="right-text bottom_border_black"><label class="right_lbl" id="summary_overhead_cost"></label></th>
+					
+				</tr>
+				<tr>
+					<td style="width: 50%" class="left-text bottom_border_white">Total Cost</th>
+					<td style="width: 5%" class="small_table_prop bottom_border_white">Rs.</th>
+					<td style="width: 45%"class="right-text bottom_border_black"><label class="right_lbl" id="summary_total_cost"></label></th>
+					
+				</tr>
+
+
+			</table>
+
+		</div>
+
+		<div class="col-right">
+
+			<table id="tbl_summary">
+				<tr>
+					<td class="left_prop bottom_border_white">Prepared By</th>
+					<td class="right_prop"><label class="gray_color_label"></label></th>
+					
+				</tr>
+				<tr>
+					<td class="left_prop bottom_border_white">Approved By</th>
+					<td class="right_prop"><label class="gray_color_label"></label></th>
+					
+				</tr>
+				<tr>
+					<td class="left_prop bottom_border_white">Checked By</th>
+					<td class="right_prop"><label class="gray_color_label"></label></th>
+					
+				</tr>
+				<tr>
+					<td class="left_prop bottom_border_white">Authorized By</th>
+					<td class="right_prop"><label class="gray_color_label"></label></th>
+					
+				</tr>
+			
+
+			</table>
+
+		</div>	
+	</div>
+
+
+
+
+	<div style="page-break-after:always" ></div>
+	<div align="center"><h6>MATERIAL COST</h6></div>
+
+	<div class="row" >
+
+
+		
+		<div  align="center" style="flex: 100%">
+			<table  class="tbl" id="material_cost_tbl" style="width: 100%">		
+			<tr>
+				<th class="tbl-th"style="width:5%">Date</th>
+				<th class="tbl-th"style="width:5%">Min No</th>
+				<th class="tbl-th" style="width:10%">Cost</th>
+				<th class="tbl-th"style="width:5%">Bill No</th>
+				<th class="tbl-th" style="width:10%">Cash</th>
+
+				<th class="tbl-th"  style="width:5%">Date</th>
+				<th class="tbl-th"  style="width:5%">Min No</th>
+				<th class="tbl-th"style="width:10%">Cost</th>
+				<th class="tbl-th"style="width:5%">Bill No</th>
+				<th class="tbl-th" style="width:10%">Cash</th>
+				
+			</tr>
+			
+
+			</table>
+
+
+		</div>
+		<br/>
+	</div>
+
+
+
+
+	<div class="row" >
+
+
+		
+		<div align="center"  style="width:100%">
+			<table id="labour_rate_tbl" class="tbl">		
+			<tr>
+				<th   class="tbl-th" style="width:33%" rowspan="2">Average Labour Cost Rs.</th>
+				<th  class="tbl-th" style="width:8%">N Hr</th>
+				<th  class="tbl-th"style="width:10%">OT Hr</th>
+
+				
+			</tr>
+			<tr>
+				<td  class="tbl-td"style="width:8%"></td>
+				<td class="tbl-td" style="width:10%"></td>
+
+			
+			</tr>
+			
+			</table>
+
+
+		</div>
+		<br/>
+	</div>
+	<br>
+
+
+	
+	<div align="center"><h6>LABOUR COST</h6></div>
+	<div class="row" >
+
+
+		
+		<div  style="flex: 100%">
+			<table id="labour_cost_tbl" class="tbl" style="width: 100%">		
+			<tr>
+				<th class="tbl-th" style="width:25%">Name of Employee</th>
+				<th class="tbl-th"style="width:15%">Date</th>
+				<th class="tbl-th"style="width:15%">N Hrs</th>
+
+				<th sclass="tbl-th" style="width:15%">OT Hrs</th>
+				<th class="tbl-th"style="width:15%">N/Hrs Cost</th>
+				<th class="tbl-th"style="width:15%">OT/Hrs Cost</th>
+
+				
+			</tr>
+			
+
+			</table>
+
+
+		</div>
+		<br/>
+	</div>
+
+
+
+
+
+
+	
+
+	<div align="center" id="print_container"> <button class="confirm" id="print" >Print</button></div>
+	
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+</div>
+<script src="./summary.js"></script>

@@ -1,0 +1,20 @@
+{
+  "name": "costing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . JobCosting",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^3.1.6",
+    "electron-store": "^6.0.0"
+  },
+  "dependencies": {
+    "electron-store": "^6.0.0"
+  }
+}

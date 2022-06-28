@@ -1,0 +1,45 @@
+<link rel="stylesheet" type="text/css" href="./skeleton.css" />
+<div class="column">
+	<div align="center">
+		<div class="single-row" >
+			<label style="width:150" >Normal Hourly Rate Rs.</label>
+		
+			<input type="text" id="normal_hourly_rate" placeholder="300.00">
+		</div>
+		<div class="single-row" >
+			<label style="width:150" >OT Hourly Rate Rs.</label>		
+			<input type="text" id="ot_hourly_rate" placeholder="450.00">
+		</div>
+
+	
+
+		<table id="tbl_labour" class="color-table">
+		<caption> <h5>Labour Costs</h5></caption>
+		<tr>
+			<th rowspan="2">Employee Name</th>
+			<th colspan="4">Cost</th>
+			
+
+		</tr>
+		<tr>
+			<th>Normal Hours</th>
+			<th>Cost</th>
+			<th>OT Hours</th>
+			<th>Cost</th>
+		</tr>
+		
+
+		</table>
+
+		<div class="single-row">
+		
+			<span id="error" style="padding-bottom: 10px;padding-top: 10px;color: red;width:100%;text-align: center;"></span> 
+
+		</div>
+
+		<div class="container_center">
+			<button id="submit_labour" >Submit</button>
+		</div>
+	</div>
+</div>
+<script src="./labour.js"></script>
